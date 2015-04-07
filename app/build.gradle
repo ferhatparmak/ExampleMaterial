@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.wikia.wikiaoriginals"
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/ASL2.0'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'               //AppCompat
+    compile 'com.android.support:recyclerview-v7:21.0.3'            //RecyclerView
+    compile 'com.android.support:cardview-v7:21.0.3'                //CardView
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.5.0'     //Jackson
+    compile 'com.octo.android.robospice:robospice:1.4.14'           //RoboSpice
+    compile 'com.octo.android.robospice:robospice-retrofit:1.4.14'  //RoboSpice-Retrofit
+    compile 'com.squareup.retrofit:converter-jackson:1.9.0'         //RoboSpice-Jackson Converter
+    compile 'com.squareup.picasso:picasso:2.5.0'                    //Picasso
+
+    compile 'org.roboguice:roboguice:3.+'                           //RoboGuice
+    provided 'org.roboguice:roboblender:3.+'                        //RoboGuice
+
+    //Testing
+    testCompile 'junit:junit:4.12'                                  //JUnit
+    testCompile('org.robolectric:robolectric:2.4')                  //Robolectric
+    testCompile "org.mockito:mockito-core:1.+"                      //Mockito
+}

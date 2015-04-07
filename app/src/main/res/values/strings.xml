@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Wikia Originals</string>
+    <string name="main_item_label_wiki_url">Wiki Url:</string>
+    <string name="connection_error_msg">Having a connection problem</string>
+    <string name="connection_error_try_btn">TRY AGAIN</string>
+</resources>
